@@ -2,3 +2,4 @@ target
 logs
 **/target
 .g8
+conf/evolutions
