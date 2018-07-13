@@ -55,14 +55,14 @@ echo "*========================*"
 echo "* Intiliaze mysql ."
 echo "*========================*"
 echo "*** create database start."
-mysqladmin -uroot create $DATABASE_NAME > /dev/null 2&>1
+mysqladmin -uroot create $DATABASE_NAME > /dev/null 2>&1
 if [ $? != 0 ]; then
     echo "Database name $DATABASE_NAME is already created."
 fi
 echo "*** create database finish."
 
 echo "*** create user start."
-mysql -uroot $DATABASE_NAME << EFO > /dev/null 2&>1
+mysql -uroot $DATABASE_NAME << EFO > /dev/null 2>&1
     create user play_user@localhost identified by 'play2018';
     grant all on ${DATABASE_NAME}.* to play_user@localhost identified by 'play2018';
     exit
@@ -128,3 +128,5 @@ fi
 # Normal end.
 echo "*** Complete"
 exit 0
+
+source ~/.bash_profile
