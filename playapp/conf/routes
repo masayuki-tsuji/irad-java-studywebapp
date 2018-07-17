@@ -8,4 +8,13 @@ GET     /                           controllers.HomeController.index
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET     /accounts/new               controllers.AccountController.input
+GET     /account/new                controllers.AccountController.input
+
+POST    /account/create             controllers.AccountController.create
+
+GET     /account                    controllers.AccountController.index
+
+GET     /account/edit/:id           controllers.AccountController.edit(id: Long)
+POST    /account/update/:id         controllers.AccountController.update(id: Long)
+
+GET     /account/destory/:id        controllers.AccountController.destroy(id: Long)

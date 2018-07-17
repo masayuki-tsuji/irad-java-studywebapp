@@ -1,0 +1,10 @@
+@(id: Long, myForm: Form[Accounts])
+
+@main("会員編集") {
+    @helper.form(helper.CSRF(routes.AccountController.update(id))) {
+        <fieldset>
+            @helper.inputText(myForm("name"), '_label -> "タイトル")
+            <input type="submit" value="更新"></input>
+        </fieldset>
+    }
+}

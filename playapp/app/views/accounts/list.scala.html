@@ -1,0 +1,21 @@
+@(accounts: List[Accounts])
+
+@main("会員一覧") {
+    <table>
+        <tr>
+            <th>会員番号</th>
+            <th>名前</th>
+        </tr>
+    
+        @for(data <- accounts) {
+            <tr>
+                <td>@data.id</td>
+                <td>@data.name</td>
+                <td><a href="@routes.AccountController.edit(data.id)">編集</a></td>
+                <td><a href="@routes.AccountController.destroy(data.id)">削除</a></td>
+            </tr>
+        }
+    </table>
+    
+    <a href="@routes.AccountController.input">作成</a>
+}
